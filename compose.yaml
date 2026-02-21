@@ -1,0 +1,17 @@
+services:
+  3d-network-graph:
+    image: node:23.7.0
+    container_name: 3d-network-graph
+    restart: unless-stopped
+    tty: true
+    working_dir: /app
+    volumes:
+      - ./app:/app
+    ports:
+      - ${PORT:-3000}:${PORT:-3000}
+    env_file:
+      - ./.env
+    environment:
+      - NODE_TLS_REJECT_UNAUTHORIZED=0
+      - NODE_ENV=development
+    command: bash -c "npm install && npm run dev"
