@@ -48,7 +48,7 @@ export const DEFAULT_LAYER_CONFIG: LayerConfig = [
 export const DEFAULT_CATEGORY_CONFIG: CategoryConfig = [
   {
     id: 'core-network',
-    label: 'Core Network',
+    label: 'コアネットワーク層',
     order: 0,
     match: {
       hostTypes: ['GWR', 'CORE_ROUTER'],
@@ -61,7 +61,7 @@ export const DEFAULT_CATEGORY_CONFIG: CategoryConfig = [
   },
   {
     id: 'prefecture-edges',
-    label: 'Prefecture Edge Routers',
+    label: '県域',
     order: 1,
     match: {
       hostTypes: ['EDGE_ROUTER'],
@@ -75,7 +75,7 @@ export const DEFAULT_CATEGORY_CONFIG: CategoryConfig = [
   },
   {
     id: 'building-switches',
-    label: 'Building Switches',
+    label: 'ビル',
     order: 2,
     match: {
       layerIds: ['building-core', 'building-distribution', 'building-access'],
