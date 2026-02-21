@@ -151,7 +151,7 @@ const placeClusterNodes = (
   layerOrders.forEach((layerOrder, layerIndex) => {
     const bucket = layerBuckets.get(layerOrder) ?? [];
     const radius = localRingRadius + layerIndex * localRingStep;
-    const yOffset = (layerIndex - (layerOrders.length - 1) / 2) * 90;
+    const yOffset = ((layerOrders.length - 1) / 2 - layerIndex) * 90;
 
     bucket.forEach((host, nodeIndex) => {
       const [x, y, z] = getRingPoint(nodeIndex, bucket.length, radius, yOffset);
