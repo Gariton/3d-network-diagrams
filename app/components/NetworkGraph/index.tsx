@@ -9,6 +9,7 @@ type NetworkGraphProps = {
   getDBData?: GetDBData;
   configs?: Partial<NetworkGraphConfigs>;
   showFPS?: boolean;
+  showClusterLabels?: boolean;
   loadingFallback?: ReactNode;
 };
 
@@ -31,6 +32,7 @@ export const NetworkGraph = ({
   getDBData,
   configs,
   showFPS = true,
+  showClusterLabels = true,
   loadingFallback = defaultLoading,
 }: NetworkGraphProps) => {
   const { loading, error, model } = useNetworkGraphData({
@@ -60,5 +62,11 @@ export const NetworkGraph = ({
     );
   }
 
-  return <NetworkGraphCanvas model={model} showFPS={showFPS} />;
+  return (
+    <NetworkGraphCanvas
+      model={model}
+      showFPS={showFPS}
+      showClusterLabels={showClusterLabels}
+    />
+  );
 };
